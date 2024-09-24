@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="body">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="text_box">
+            <button onclick="Clear()" id="clr">CLR</button>
+            <button onclick="del()" id="del">DEL</button>
+            <button onclick="diaplay('%')">%</button>
+            <button onclick="diaplay('/')">/</button>
+            <button onclick="diaplay('7')">7</button>
+            <button onclick="diaplay('8')">8</button>
+            <button onclick="diaplay('9')">9</button>
+            <button onclick="diaplay('*')">x</button>
+            <button onclick="diaplay('4')">4</button>
+            <button onclick="diaplay('5')">5</button>
+            <button onclick="diaplay('6')">6</button>
+            <button onclick="diaplay('-')">-</button>
+            <button onclick="diaplay('1')">1</button>
+            <button onclick="diaplay('2')">2</button>
+            <button onclick="diaplay('3')">3</button>
+            <button onclick="diaplay('+')">+</button>
+            <button onclick="diaplay('.')">.</button>
+            <button onclick="diaplay('0')">0</button>
+            <button onclick="calculate('=')" class="equal">=</button>
+        </div>
+    </div>
+    <script>
+        let opr=document.getElementById("text_box");
+        function diaplay(num)
+        {
+            opr.value+=num
+        }
+        function calculate()
+        {
+            try{
+                opr.value=eval(opr.value);
+            }
+            catch(err)
+            {
+                alert("invalid");
+            }
+        }
+        function Clear()
+        {
+            opr.value="";
+        }
+        function del()
+        {
+            opr.value=opr.value.slice(0,-1)
+        }
+
+    </script>
+</body>
+</html>
